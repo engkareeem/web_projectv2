@@ -1,0 +1,137 @@
+.users-mgm-title {
+  font-family: "Agency FB", sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 42px;
+  width: 80%;
+  background-color: #07334f;
+  border-radius: 25px;
+  text-align: center;
+  padding: 10px 0;
+  margin: 2% auto;
+}
+
+.users-mgm-body {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  min-height: 42vh;
+  margin: 0 auto;
+
+  #user-form-wrapper {
+    flex: 6;
+    padding: 20px;
+    margin: 0 40px 0 0 ;
+    background-color: #07334f;
+    border-radius: 25px;
+
+    .form-title {
+      color: white;
+      font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      width: 60%;
+      text-align: center;
+      margin: 10px auto 15px;
+
+    }
+    #user-form {
+      padding: 20px;
+      text-align: center;
+      width: 80%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-content: start;
+      row-gap: 60px;
+      margin: 0 auto ;
+
+
+      .data-box {
+        padding: 0 20px;
+        display: grid;
+        text-align: start;
+        align-items: center;
+        justify-content: stretch;
+
+        label {
+          color: white;
+          font-family: "Arial Black", sans-serif;
+        }
+        input {
+          background-color: #f1f1f1;
+          border: none;
+          border-radius: 6px;
+          min-height: 34px;
+          outline: none;
+          padding: 6px;
+          &:disabled {
+            background-color: #ccc;
+
+          }
+        }
+
+
+      }
+      .deactive-btn{
+        @include primary-btn;
+        padding: 12px;
+        margin-top: 30px;
+        grid-column: span 2;
+        &:disabled {
+          background-color: #1F2833;
+          color: var(--text-secondary-color);
+          cursor: not-allowed;
+        }
+
+      }
+
+    }
+  }
+
+  .users-list-card {
+
+    flex: 2;
+    background-color: #07334f;
+    border-radius: 25px 8px 50px 25px;
+    overflow-y: scroll;
+
+
+    .user-item {
+      cursor: pointer;
+      display: flex;
+      height: 7vh;
+      justify-content: start;
+      align-items: center;
+      transition: all 0.4s;
+      & { //&:not(:last-child){
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      &:first-child:hover {
+        border-radius: 25px 0 0 0;
+      }
+      &:hover, &.selected {
+        background-color: #2c97c0;
+      }
+      .img-container {
+        height: 50%;
+        margin: 20px;
+        img {
+          width: auto;
+          border-radius: 50%;
+          height: 100%;
+        }
+      }
+      .user-item-title {
+        color: var(--text-primary-color)
+      }
+    }
+
+  }
+
+}
+
+
+

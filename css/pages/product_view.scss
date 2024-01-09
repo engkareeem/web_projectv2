@@ -1,0 +1,133 @@
+.button-icon {
+  font-size: 4em;
+}
+
+.product-view-container {
+  width: 90%;
+  margin: 50px auto auto auto;
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  .information-container {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 65%;
+    height: 70vh;
+    background-color: color-mix(in srgb, var(--secondary), transparent 95%);
+    border-radius: 10px;
+    box-shadow: 0 0 8px 6px color-mix(in srgb, var(--primary), transparent 92%);
+
+    padding: 20px;
+    color: var(--text-primary-color);
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      .header-actions {
+        .icon {
+          font-size: 1.5em;
+          cursor: pointer;
+          margin-left: 10px;
+          padding: 6px;
+          border-radius: 50%;
+          background-color: var(--secondary);
+          &:hover {
+            background-color: var(--primary);
+
+          }
+        }
+      }
+    }
+
+    .rating-container {
+      display: flex;
+      .icon {
+        color: gold;
+        font-size: 1.3em;
+      }
+      .reviews {
+        color: var(--text-secondary-color);
+        margin-left: 5px;
+      }
+    }
+
+    .description {
+      margin-top: 20px;
+      color: var(--text-primary-color);
+      font-size: 0.95em;
+      width: 70%;
+    }
+
+    .buying-container {
+      margin-top: auto;
+      display: flex;
+      width: 100%;
+      align-items: baseline;
+      .price-container {
+
+        .price-label {
+          margin-top: 5px;
+          color: var(--text-secondary-color);
+          font-size: 1.1em;
+          font-weight: bolder;
+        }
+      }
+      .actions-container {
+        display: flex;
+        gap: 10px;
+        margin-left: auto;
+      }
+    }
+  }
+
+  .image-container{
+    float: right;
+    width: 30%;
+    height: 70vh;
+    overflow: hidden;
+    background-color: color-mix(in srgb, var(--secondary), transparent 95%);
+    border-radius: 10px;
+    box-shadow: 0 0 8px 6px color-mix(in srgb, var(--primary), transparent 92%);
+    img {
+      object-fit: contain;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .product-view-container {
+    display: flex;
+    flex-direction: column;
+
+
+    .information-container {
+      width: 100%;
+      box-shadow: 0 0 8px 4px color-mix(in srgb, var(--primary), transparent 92%);
+      height: 45vh;
+      .description {
+        width: 100%;
+      }
+
+      .actions-container {
+
+      }
+    }
+    .image-container {
+      width: 100%;
+      height: 25vh;
+      margin-bottom: 8%;
+      box-shadow: 0 0 8px 2px color-mix(in srgb, var(--primary), transparent 92%);
+
+    }
+  }
+
+}
+

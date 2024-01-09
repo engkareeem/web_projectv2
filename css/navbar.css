@@ -1,0 +1,182 @@
+#nav {
+  position: sticky;
+  top: 0;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  height: 7vh;
+  margin-bottom: 1vh;
+  transition: all 0.6s;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+#nav #logo {
+  width: 6vw;
+  margin-right: 2vw;
+}
+#nav #nav-links {
+  flex: 1;
+}
+#nav #nav-links #cart-nav-btn {
+  display: none;
+  position: relative;
+}
+#nav #nav-links .nav-item-link {
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  font-weight: lighter;
+  font-size: 18px;
+  padding: 8px 16px;
+  transition: color 0.4s;
+}
+#nav #nav-links .nav-item-link.active, #nav #nav-links .nav-item-link:hover {
+  color: var(--text-primary-color);
+}
+#nav #nav-links .nav-item-link .cart-count-Badge {
+  display: none;
+}
+#nav .cart-count-Badge {
+  position: absolute;
+  background-color: red;
+  top: -2px;
+  font-size: 12px;
+}
+#nav #nav-buttons #shopping-cart-icon {
+  margin-right: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  position: relative;
+  font-size: 28px;
+  color: rgba(240, 240, 240, 0.6);
+}
+#nav #nav-buttons button {
+  color: var(--text-primary-color);
+  border: none;
+  font-size: 16px;
+  font-weight: lighter;
+  padding: 4px 16px;
+  border-radius: 4px;
+  background: transparent;
+}
+#nav #nav-buttons button:last-of-type {
+  background-color: var(--secondary);
+  margin-right: 2vw;
+}
+#nav.scrolled {
+  background-color: var(--accent);
+  box-shadow: 0 8px 40px var(--accent);
+  border-radius: 0 0 8px 8px;
+  transition: width 1s;
+  border: none;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 10;
+}
+#nav.scrolled button:last-of-type {
+  background-color: var(--accent);
+}
+
+#notification-section {
+  pointer-events: none;
+  position: fixed;
+  z-index: 99;
+  right: 0;
+  width: 22%;
+  height: 60%;
+  top: 30%;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 6px;
+  transition: all 0.4s;
+}
+#notification-section .notification {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  color: var(--text-primary-color);
+  background: linear-gradient(to bottom, #156e9e, #042337);
+  padding: 12px 12px 12px 4px;
+  border-radius: 12px;
+  border: 2px solid #3e81a5;
+}
+#notification-section .notification .notification-icon {
+  margin: 0;
+  background-color: transparent;
+  width: 65%;
+  height: 60%;
+  padding: 4px;
+  justify-self: center;
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2em;
+  border-radius: 50%;
+}
+#notification-section .notification .notification-body .notification-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-primary-color);
+}
+#notification-section .notification .notification-body .notification-msg {
+  padding: 2px;
+  font-size: 12px;
+  color: rgba(250, 250, 250, 0.75);
+}
+#notification-section .notification.error-notification .notification-icon {
+  color: #d82e2e;
+}
+#notification-section .notification.warning-notification .notification-icon {
+  align-items: center;
+  color: #f1a839;
+}
+#notification-section .notification.success-notification .notification-icon {
+  align-items: center;
+  color: #299e4b;
+}
+
+@media only screen and (max-width: 800px) {
+  #nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 12vh;
+    padding: 0;
+  }
+  #nav #nav-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #nav #nav-links .cart-count-Badge {
+    width: 10px;
+    right: -20px;
+    top: 10px;
+  }
+  #nav #nav-links #cart-nav-btn {
+    display: inline-block;
+  }
+  #nav #nav-links > .nav-item-link {
+    flex: 1;
+    border-right: 1px solid white;
+  }
+  #nav #nav-links > .nav-item-link:last-child {
+    border: none;
+  }
+  #nav #logo {
+    width: 16vw;
+    margin: 0 auto;
+  }
+  #nav #nav-buttons {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=navbar.css.map */

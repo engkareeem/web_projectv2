@@ -1,0 +1,60 @@
+.dashboard-title {
+  font-family: "Agency FB", sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 42px;
+  width: 80%;
+  background-color: #07334f;
+  border-radius: 25px;
+  text-align: center;
+  padding: 12px;
+  margin: 4% auto;
+}
+
+.dashboard-body {
+  background-color: #07334f;
+  color: white;
+  width: 80%;
+  margin: 4% auto;
+  padding: 26px;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 26px;
+  gap: 40px;
+}
+.dashboard-body > * {
+
+  background-color: #2c97c0;
+  padding: 18px;
+  text-align: center;
+  border-radius: 20px;
+  letter-spacing: 3px;
+  box-shadow: 0 0 8px 4px rgba(99, 135, 243, 0.4);
+  font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+}
+#total-profit{
+  grid-column: span 4;
+}
+#total-products {
+  grid-column: span 2;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+#stock-products {
+  grid-column: span 2;
+
+}
+#sold-products {
+  grid-column: span 2;
+
+}
+.dashboard-body span {
+  font-style: normal;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-decoration: none;
+}

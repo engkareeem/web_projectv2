@@ -1,0 +1,94 @@
+#login-modal, #signup-modal, #success-purchase-modal{
+
+  .modal-content {
+    background-color: var(--accent);
+    color: var(--text-primary-color);
+
+
+    .modal-header {
+      border-color: rgba(99,99,99, 0.3);
+      border-width: 1px;
+      .close-button {
+        color: var(--text-secondary-color);
+        font-size: 26px;
+        cursor: pointer;
+        user-select: none;
+
+      }
+
+    }
+
+    .modal-body {
+      padding: 40px;
+
+      .body-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5%;
+
+        .person-icon {
+          display: inline-block;
+          text-align: center;
+          color: var(--primary);
+          font-size: 2.2em;
+          vertical-align: baseline;
+          cursor: none;
+          user-select: none;
+          margin-right: 2%;
+
+        }
+        .content-title {
+          display: inline-block;
+          font-size: 1.6em;
+        }
+      }
+
+      form {
+        label {
+          font-size: 0.9em;
+          color: var(--text-primary-color);
+        }
+
+        input[type=password], input[type=email], input[type=text] {
+          @include form-text-field;
+          padding-left: 35px;
+
+        }
+        .primary-btn {
+          @include primary-btn;
+          margin: 2% 0 10% 0;
+          width: 100%;
+        }
+        .icon-text-field {
+          position: relative;
+          .text-field-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 10px;
+            color: var(--text-secondary-color);
+            font-size: 1.2em;
+          }
+          &:focus {
+            color: var(--text-primary-color);
+          }
+        }
+      }
+
+      .medal-footer {
+        display: flex;
+        justify-content: center;
+        font-size: 0.8em;
+        color: var(--text-secondary-color);
+
+        .switch-to-signup , .switch-to-signin{
+          color: var(--primary);
+          cursor: pointer;
+          user-select: none;
+        }
+      }
+    }
+
+  }
+
+}

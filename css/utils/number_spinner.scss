@@ -1,0 +1,38 @@
+.horizontal-spinner {
+  display: inline-flex;
+  align-items: center;
+  & > button {
+    display: inline-flex;
+    align-items: center;
+  }
+  & > * {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--text-primary-color);
+    text-align: center;
+    height: 30px;
+    padding: 8px;
+    margin: 0;
+    transition: all 0.4s;
+  }
+  .spinner-decrement {
+    border-radius: 6px 0 0 6px;
+
+  }
+  .spinner-increment {
+    border-radius: 0 6px 6px 0;
+  }
+  .spinner-decrement:hover , .spinner-increment:hover {
+    background-color: var(--primary);
+  }
+  .spinner-value {
+    -moz-appearance: textfield;
+    outline: none;
+    width: 60px;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+// main.scss
+
+@import 'variables';
+@import 'mixins';
+
+@import "navbar";
+@import "utils/number_spinner";
+
+@import "utils/product_card";
+@import "utils/slider";
+@import "utils/grid_view";
+@import "auth/sign-in_login";
+@import "pages/product_view";
+@import "pages/profile-page";
+@import "pages/dashboard-page";
+@import "pages/products-mgm";
+@import "pages/users-mgm";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: var(--font-family);
+}
+
+button {
+  user-select: none;
+}
+
+body {
+  background: radial-gradient(circle at 3% 25%, #0b0c10 0%, #070c1a 10%, #01102c 25%);
+  //linear-gradient(to right bottom, #0b0c10, #0c0f1c, #0b1228, #061533, #00173f);
+  //radial-gradient(circle at 3% 25%, var(--primary) 0%, var(--primary-dark) 25%);
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#footer {
+  margin-top: auto;
+}
+//Scroll stuff
+/* Container */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #01102c;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary); // TODO: Needs new color variable
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--secondary); // TODO: Needs new color variable
+}
+
+//.blue-circle {
+//  background:radial-gradient(circle at 3% 25%, rgba(0, 40, 83, 1) 0%, rgba(4, 12, 24, 1) 25%);
+//  z-index: -1;
+//  position: absolute;
+//  height: 100vh;
+//  width: 100vw;
+//  top: 0;
+//  left:0;
+//
+//}
+
+#carouselSpecialOffers {
+  height: 55vh;
+  width: 80%;
+  margin: 0 auto;
+  .carousel-inner {
+    height: 100%;
+    .carousel-item {
+      height: 55vh;
+      width: 100%;
+      img{
+        height: 100%;
+        width: 100%;
+        margin: 0 auto;
+        object-fit: contain;
+
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  #carouselSpecialOffers {
+    height: 25vh;
+    width: 100%;
+    margin-bottom: 15px;
+    .carousel-inner {
+      height: 100%;
+      .carousel-item {
+        height: 25vh;
+        width: 100%;
+        img{
+          height: 100%;
+          width: 100%;
+          margin: 0 auto;
+          object-fit: contain;
+
+        }
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+

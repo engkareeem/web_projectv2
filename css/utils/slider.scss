@@ -1,0 +1,197 @@
+.cards-slide-label {
+  display: flex;
+  color: var(--text-secondary-color);
+  width: 80%;
+  margin: 0 auto 20px;
+  justify-content: space-between;
+  align-content: baseline;
+  overflow: auto;
+  border-bottom: 2px solid color-mix(in srgb, var(--secondary), transparent 70%);
+  .title {
+    font-size: 2em;
+    font-weight: 1000;
+    color: var(--text-primary-color);
+  }
+
+  .see-more{
+    align-content: end;
+    align-items: end;
+    margin:auto 10px;
+    text-decoration: underline;
+    text-decoration-color: grey;
+    color: var(--text-secondary-color);
+    &:hover {
+      font-weight: bolder;
+      cursor: pointer;
+      text-decoration-color: white;
+    }
+  }
+}
+.cards-slide-container {
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+  .arrow {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 5%;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    display: none;
+    user-select: none;
+    &:hover {
+      font-weight: bold;
+    }
+    &:active {
+      font-weight: normal;
+    }
+  }
+
+  .arrow-right {
+    right:0;
+    text-align: right;
+    color: var(--text-primary-color);
+    background-image: linear-gradient(to right,transparent 10%, color-mix(in srgb, var(--primary), transparent 50%));
+  }
+  .arrow-left {
+    left:0;
+    text-align: left;
+    color: var(--text-primary-color);
+    background-image: linear-gradient(to left,transparent 10%, color-mix(in srgb, var(--primary), transparent 50%));
+  }
+  .cards-container {
+
+
+    position: relative;
+    display: flex;
+    list-style: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    width:100%;
+    height: 25vh; // TODO: Fix height please :(
+    //height: 300px;
+    //border-top: 1px solid;
+    //border-bottom: 1px solid;
+    border-color: grey;
+    padding: 10px 0;
+
+
+    ////Scroll
+    ///* Container */
+    //&::-webkit-scrollbar {
+    //  height: 10px;
+    //}
+    //
+    ///* Track */
+    //&::-webkit-scrollbar-track {
+    //  background: var(--primary);
+    //}
+    //
+    ///* Handle */
+    //&::-webkit-scrollbar-thumb {
+    //  background: var(--secondary-dark); // TODO: Needs new color variable
+    //  border-radius: 5px;
+    //}
+    //
+    ///* Handle on hover */
+    //&::-webkit-scrollbar-thumb:hover {
+    //  background-color: var(--secondary); // TODO: Needs new color variable
+    //}
+  }
+}
+
+.cards-container .spacer {
+  scroll-snap-align: start;
+  &:first-child {
+    margin-right: 20px;
+  }
+  &:last-child {
+    margin-left: 20px;
+  }
+}
+.cards-container .card-item {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 100%;
+  flex-basis: calc(100%/3 - 10px);
+
+  scroll-snap-align: start;
+}
+
+
+
+@media only screen and (max-width: 700px) {
+
+  .arrow {
+    display: none;
+  }
+  .cards-slide-label {
+    margin-top: 5%;
+    width: 90%;
+    .title {
+      font-size: 0.9em;
+    }
+    .see-more {
+      font-size: 0.6em;
+    }
+  }
+
+  .cards-slide-container {
+    width: 90%;
+
+    .cards-container {
+      width: 100%;
+      height: 14vh;
+      .card-item {
+        margin-left: 10px;
+        flex-basis: calc(100%/2 - 10px);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 701px) {
+  .cards-slide-container {
+    .cards-container {
+      overflow-x: hidden;
+    }
+    .card-item {
+      flex-basis: calc(calc(100% / 4) - 20px);
+    }
+
+    .card-item:not(:last-child) {
+      margin-right: 30px;
+    }
+    .arrow {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .cards-slide-container {
+
+    .cards-container {
+      overflow-x: hidden;
+
+    }
+    .card-item {
+      flex-basis: calc(calc(100% / 5) - 30px);
+    }
+
+    .card-item:not(:last-child) {
+      margin-right: 40px;
+    }
+    .arrow {
+      display: block;
+    }
+  }
+}

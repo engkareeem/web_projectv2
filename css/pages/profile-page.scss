@@ -1,0 +1,120 @@
+.profile-body {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  width: 100%;
+  gap: 4%;
+  margin: 6% 0;
+
+  .info-card {
+    border-radius: 12px;
+    text-align: center;
+    padding: 12px;
+    align-self: start;
+    box-shadow: 0 0 8px var(--primary);
+    margin-left: 5%;
+    .profile-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 24px;
+    }
+    .username {
+      font-weight: bold;
+      color: var(--text-primary-color);
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+    .email {
+      color: var(--text-secondary-color);
+      font-size: 0.8rem;
+      margin-bottom: 2em;
+    }
+    .edit-profile, .logout-profile {
+      @include primary-btn;
+      margin: 10px 0;
+      width: 100%;
+    }
+  }
+
+
+  .data-card {
+    margin-right: 5%;
+    .tabs-box {
+
+      border-radius: 0 0 12px 12px;
+      text-align: center;
+      border: 1px solid var(--primary);
+      border-top: none;
+      min-height: 30vh;
+
+    }
+    .sub-nav {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+      & li {
+        text-align: center;
+        flex: 1;
+        /*border: 1px solid var(--accent);*/
+        border-bottom: 1px solid var(--primary);
+        border-radius: 6px 6px 0 0;
+        padding: 12px 0 ;
+        transition: all 0.2s;
+      }
+      & li.active {
+        border: 1px solid var(--primary);
+        border-bottom: 1px solid var(--accent);
+      }
+
+      & li a {
+        text-decoration: none;
+        color: var(--text-secondary-color);
+        cursor: pointer;
+        transition: all 0.4s;
+
+      }
+      & li.active a, a:hover{
+        color: var(--text-primary-color);
+
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 700px) {
+  .profile-body {
+    grid-template-columns: auto;
+    gap: 40px;
+    margin: 0 auto;
+
+    .info-card {
+      width: 60%;
+      margin: 20px auto;
+      height: auto;
+      padding: 20px;
+    }
+
+
+  }
+  .data-card {
+    width: 90%;
+    margin: 0 auto;
+    .sub-nav {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
